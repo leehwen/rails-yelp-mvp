@@ -1,0 +1,25 @@
+<div class= "mt-5 ms-5 ps-4 w-75">
+
+  <div class= "border-bottom pb-2 mb-5">
+    <h1>
+      Submit a review for <%= @restaurant.name %>
+    </h1>
+  </div>
+
+  <div class="w-50">
+    <%= simple_form_for [@restaurant, @new_review] do |f| %>
+      <%= f.input :rating, collection: [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], prompt: "0 to 5" %>
+      <%= f.input :content %>
+      <%= f.submit class: "btn btn-secondary mt-3"%>
+    <% end %>
+  </div>
+
+  <p class="border-top pt-2 mt-5">
+     <%=
+    link_to "Back to restaurants",
+    restaurants_path,
+    class: "link-success link-underline-opacity-0 link-underline-opacity-100-hover link-offset-2-hover"
+    %>
+  </p>
+
+</div>

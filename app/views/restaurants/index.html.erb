@@ -1,0 +1,40 @@
+<div class= "mt-5 ms-5 ps-4 w-75">
+  <div class= "border-bottom pb-2 mb-4">
+    <h1>
+      Restaurants
+    </h1>
+    <p>
+      <%=
+        link_to "Submit a New Restaurant",
+        restaurants_new_path,
+        class: "link-success link-underline-opacity-0 link-underline-opacity-100-hover link-offset-2-hover"
+      %>
+    </p>
+  </div>
+
+<div class="list-group">
+
+     <% @restaurants.each do |restaurant| %>
+      <div class="list-group-item list-group-item-action">
+        <h3 class="mt-3">
+          <%=
+            link_to restaurant.name,
+            restaurant_path(restaurant),
+            class: "link-dark link-underline-opacity-0 link-underline-opacity-100-hover link-offset-2-hover"
+          %>
+        </h3>
+        <h6 class="mb-4">
+          Cuisine: <%= restaurant.category %>
+        </h6>
+        <p class="mb-3">
+          Located at <%= restaurant.address %>
+        </p>
+      </div>
+    <% end %>
+</div>
+
+
+  <ul class="list-inline">
+
+  </ul>
+</div>
